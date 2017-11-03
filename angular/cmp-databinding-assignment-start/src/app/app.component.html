@@ -1,0 +1,14 @@
+<!-- app.component.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game-control (tick)="onTick($event)"></app-game-control>
+      <div class="row">
+        <div class="col-xs-6" *ngFor="let element of elements">
+          <app-odd *ngIf="element % 2 == 1 ; else even">{{element}}</app-odd>
+          <ng-template #even><app-even>{{element}}</app-even></ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
